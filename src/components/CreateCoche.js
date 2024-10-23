@@ -35,7 +35,7 @@ export default class CreateCoche extends Component {
     let url = Global.urlApiCoches + request;
 
     axios.post(url, coche).then(response => {
-        console.log("Insertado")
+        console.log("Coche insertado")
         this.setState({
             status: true,
         })
@@ -61,7 +61,7 @@ export default class CreateCoche extends Component {
             <label>Conductor</label>
             <input type="text" ref={this.cajaConductor} className="form-control" />
             <label>Imagen</label>
-            <input type="text" ref={this.cajaId} className="form-control" />
+            <input type="text" ref={this.cajaImagen} className="form-control" />
             <button onClick={this.insertarCoche} className="btn btn-info">Insertar coche</button>
           </form>
         </div>

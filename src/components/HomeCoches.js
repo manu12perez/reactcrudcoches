@@ -23,6 +23,16 @@ export default class HomeCoches extends Component {
     });
   };
 
+  deleteCoche = (idCoche) => {
+    let request = "api/coches/deletecoche/" + idCoche;
+    let url = Global.urlApiCoches + request;
+
+    axios.delete(url).then(response => {
+      console.log("Coche eliminado")
+      this.loadCoches();
+    })
+  }
+
   componentDidMount = () => {
     this.loadCoches();
   };
@@ -54,6 +64,7 @@ export default class HomeCoches extends Component {
                 <th>Modelo</th>
                 <th>Conductor</th>
                 <th>Imagen</th>
+                <th>Funciones</th>
               </tr>
             </thead>
             <tbody>
@@ -70,6 +81,13 @@ export default class HomeCoches extends Component {
                         style={{ height: "200px", width: "200px" }}
                         alt="imagenCoche"
                       />
+                    </td>
+                    <td>
+                      <NavLink to={"/detalle/" + coche.idCoche} className={"btn btn-info"}> Detalle</NavLink>
+                      <NavLink to={"/update/" + coche.idCoche} className={"btn btn-success"}> Update</NavLink>
+                      <button className="btn btn-danger" onClick={() => {this.deleteCoche(coche.idCoche)}}>
+                        Eliminar
+                      </button>
                     </td>
                   </tr>
                 );
