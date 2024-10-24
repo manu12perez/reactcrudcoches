@@ -45,7 +45,7 @@ export default class DetalleCoche extends Component {
             </thead>
             <tbody>
               <tr>
-                <td>{this.state.coche.idCoche}</td>
+                <td>{this.props.id}</td>
                 <td>{this.state.coche.marca}</td>
                 <td>{this.state.coche.modelo}</td>
                 <td>{this.state.coche.conductor}</td>

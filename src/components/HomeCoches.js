@@ -85,8 +85,9 @@ export default class HomeCoches extends Component {
                     <td>
                       <NavLink to={"/detalle/" + coche.idCoche} className={"btn btn-info"}> Detalle</NavLink>
                       <NavLink to={"/update/" + coche.idCoche} className={"btn btn-success"}> Update</NavLink>
-                      <button className="btn btn-danger" onClick={() => {this.deleteCoche(coche.idCoche)}}>
-                        Eliminar
+                      <NavLink to={"/delete/" + coche.idCoche} className={"btn btn-danger"}> Página Eliminar</NavLink>
+                      <button className="btn btn-dark" onClick={() => {this.deleteCoche(coche.idCoche)}}>
+                        Eliminar Directamente
                       </button>
                     </td>
                   </tr>
